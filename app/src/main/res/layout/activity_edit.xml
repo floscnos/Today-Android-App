@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditActivity">
+
+    <TextView
+        android:id="@+id/edit_title_tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/edit_defaultTitle_tv_text"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edit_hor1_gl_id"
+        app:layout_constraintStart_toStartOf="@+id/edit_vert1_gl_id" />
+
+    <ImageButton
+        android:id="@+id/edit_save_btn_id"
+        android:layout_width="39dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:onClick="save"
+        android:tooltipText="@string/edit_save_btn_tt"
+        app:layout_constraintBottom_toTopOf="@+id/edit_hor1_gl_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/green_check" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/edit_taskName_et_id"
+        android:layout_width="360dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="31dp"
+        android:hint="@string/edit_name_et_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/edit_hor1_gl_id" />
+
+    <EditText
+        android:id="@+id/edit_taskNotes_et_id"
+        android:layout_width="360dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="31dp"
+        android:ems="10"
+        android:gravity="top|left"
+        android:hint="@string/edit_notes_et_hint"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/edit_taskName_et_id" />
+
+    <Spinner
+        android:id="@+id/edit_taskLabel_spinner_id"
+        android:layout_width="360dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="31dp"
+        android:fadingEdge="none"
+        android:hint="Choose Label"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/edit_taskNotes_et_id"
+        app:layout_constraintVertical_bias="0.361"
+        tools:visibility="visible" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/edit_vert1_gl_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/edit_hor1_gl_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="74dp" />
+
+    <ImageButton
+        android:id="@+id/edit_delete_btn_id"
+        android:layout_width="35dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="40dp"
+        android:background="@color/white"
+        android:onClick="delete"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/trash_bin" />
+
+    <View
+        android:id="@+id/edit_top_hr_id"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@+id/edit_hor1_gl_id" />
+
+    <TextView
+        android:id="@+id/edit_taskDeadline_tv_id"
+        android:layout_width="265dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/black_border_bg"
+        android:gravity="center_vertical"
+        android:onClick="openDatePicker"
+        android:paddingStart="5dp"
+        android:text="@string/edit_deadline_tv_text"
+        app:layout_constraintStart_toEndOf="@+id/edit_taskDeadline_btn_id"
+        app:layout_constraintTop_toBottomOf="@+id/edit_taskNotes_et_id" />
+
+    <ImageButton
+        android:id="@+id/edit_taskDeadline_btn_id"
+        android:layout_width="51dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="28dp"
+        android:background="@color/white"
+        android:onClick="openDatePicker"
+        android:paddingLeft="-3dp"
+        android:paddingTop="5dp"
+        android:paddingRight="-5dp"
+        android:paddingBottom="5dp"
+        android:scaleType="fitCenter"
+        android:tooltipText="@string/edit_taskDeadline_btn_tt"
+        app:layout_constraintStart_toStartOf="@+id/edit_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/edit_taskNotes_et_id"
+        app:srcCompat="@drawable/calendar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

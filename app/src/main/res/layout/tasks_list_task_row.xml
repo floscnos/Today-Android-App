@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp">
+
+    <ImageButton
+        android:id="@+id/tasksListRow_done_btn_id"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="#ffffff"
+        android:padding="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/circle_done_toggle" />
+
+    <TextView
+        android:id="@+id/tasksListRow_name_tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:paddingTop="5dp"
+        />
+
+    <ImageButton
+        android:id="@+id/tasksListRow_info_icon_id"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="#ffffff"
+        android:paddingTop="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/info"
+        android:tooltipText="@string/tasksListRow_info_icon_tt" />
+</LinearLayout>

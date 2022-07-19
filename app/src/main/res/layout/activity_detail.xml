@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/detail_title_tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/detail_title_tv_text"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/detail_hor1_gl_id"
+        app:layout_constraintStart_toStartOf="@+id/detail_vert1_gl_id" />
+
+
+    <TextView
+        android:id="@+id/detail_taskNotes_tv_id"
+        android:layout_width="355dp"
+        android:layout_height="158dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/black_border_bg"
+        android:ems="10"
+        android:padding="4dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/detail_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/detail_taskName_tv_id" />
+
+    <TextView
+        android:id="@+id/detail_taskName_tv_id"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="28dp"
+        android:textColor="@color/black"
+        android:textSize="38dp"
+        app:layout_constraintStart_toStartOf="@+id/detail_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/detail_top_hr_id" />
+
+    <TextView
+        android:id="@+id/detail_label_tv_id"
+        android:layout_width="342dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/black_border_bg"
+        android:fadingEdge="none"
+        android:padding="4dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/detail_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/detail_deadlineIcon_iv_id"
+        tools:visibility="visible" />
+
+    <ImageButton
+        android:id="@+id/detail_editTask_button_id"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/white"
+        android:onClick="gotoEditActivity"
+        android:scaleType="fitCenter"
+        android:tooltipText="@string/detail_editTask_button_tt"
+        app:layout_constraintBottom_toTopOf="@+id/detail_hor1_gl_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/pen_solid" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detail_vert1_gl_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detail_hor1_gl_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="74dp" />
+
+    <View
+        android:id="@+id/detail_top_hr_id"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@+id/detail_hor1_gl_id"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/detail_taskDeadline_tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Deadline"
+        app:layout_constraintBottom_toTopOf="@+id/detail_label_tv_id"
+        app:layout_constraintStart_toEndOf="@+id/detail_deadlineIcon_iv_id"
+        app:layout_constraintTop_toBottomOf="@+id/detail_taskNotes_tv_id"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/detail_taskDoneDate_tv_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:text="@string/task_detail_task_done_date_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/detail_deadlineIcon_iv_id"
+        android:layout_width="44dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="@+id/detail_vert1_gl_id"
+        app:layout_constraintTop_toBottomOf="@+id/detail_taskNotes_tv_id"
+        app:srcCompat="@drawable/calendar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
